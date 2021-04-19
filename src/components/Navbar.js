@@ -14,16 +14,27 @@ const Navbar = ({ image }) => {
     <AppBar>
       <Toolbar>
         <img src={companyLogo} height='60px' width='60px' />
-        <Box pl={4}>
+        <Box pl={4} pr={4}>
           <Typography variant='h3'>Allata</Typography>
         </Box>
         <Typography>
-          <ListItemLink color='secondary' underline='none'>
-            <Link to='/'>Home</Link>
-          </ListItemLink>
-          <ListItemLink color='secondary' underline='none'>
-            <Link to='/about'>About</Link>
-          </ListItemLink>
+          <Link
+            component={ListItemLink}
+            color='secondary'
+            underline='none'
+            to='/'
+          >
+            Home
+          </Link>
+
+          <Link
+            component={ListItemLink}
+            color='secondary'
+            underline='none'
+            to='/about'
+          >
+            About
+          </Link>
         </Typography>
       </Toolbar>
     </AppBar>
