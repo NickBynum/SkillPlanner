@@ -7,37 +7,48 @@ import {
   Typography,
   Link as ListItemLink,
 } from '@material-ui/core';
+import Grid from '@material-ui/core/Grid';
 import companyLogo from '../assets/images/AllataLogo1.png';
 
 const Navbar = ({ image }) => {
   return (
-    <AppBar>
-      <Toolbar>
-        <img src={companyLogo} height='60px' width='60px' />
-        <Box pl={4} pr={4}>
-          <Typography variant='h3'>Allata</Typography>
-        </Box>
-        <Typography>
-          <Link
-            component={ListItemLink}
-            color='secondary'
-            underline='none'
-            to='/'
-          >
-            Home
-          </Link>
+    <Grid container spacing={12} direction='row'>
+      <AppBar>
+        <Toolbar>
+          <Grid item xs={1}>
+            <img src={companyLogo} height='60px' width='60px' />
+          </Grid>
+          <Grid item xs={1}>
+            <Typography variant='h3'>Allata</Typography>
+          </Grid>
 
-          <Link
-            component={ListItemLink}
-            color='secondary'
-            underline='none'
-            to='/about'
-          >
-            About
-          </Link>
-        </Typography>
-      </Toolbar>
-    </AppBar>
+          <Grid item xs={1} align-content='flex-end'>
+            <Typography>
+              <Link
+                component={ListItemLink}
+                color='secondary'
+                underline='none'
+                to='/'
+              >
+                Home
+              </Link>
+            </Typography>
+          </Grid>
+          <Grid item xs={1}>
+            <Typography>
+              <Link
+                component={ListItemLink}
+                color='secondary'
+                underline='none'
+                to='/about'
+              >
+                About
+              </Link>
+            </Typography>
+          </Grid>
+        </Toolbar>
+      </AppBar>
+    </Grid>
   );
 };
 
